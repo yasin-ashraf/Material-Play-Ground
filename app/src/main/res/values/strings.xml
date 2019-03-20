@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Material Play Ground</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="use_camera">Use Camera</string>
+    <string name="upload_from_gallery">Upload from Gallery</string>
+    <string name="rounded_bottom_sheet">Rounded Bottom Sheet</string>
+</resources>
