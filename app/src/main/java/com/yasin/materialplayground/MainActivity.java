@@ -2,6 +2,7 @@ package com.yasin.materialplayground;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         drawer = findViewById(R.id.menu);
         buttonToggle = findViewById(R.id.button_drawer_toggle);
 
+        applyWindowInsets();
         setupDrawer();
         buttonToggle.setOnClickListener(view -> drawerLayout.openDrawer(drawer));
         setupDrawerClicks();
@@ -44,4 +46,25 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, RoundedBottomSheetActivity.class));
         });
     }
+
+    private void applyWindowInsets() {
+        drawerLayout.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
+        drawerLayout.setOnApplyWindowInsetsListener((view, windowInsets) -> {
+
+            /*ViewGroup.MarginLayoutParams lpToolbar = (ViewGroup.MarginLayoutParams) toolbar
+                    .getLayoutParams();
+            lpToolbar.topMargin += windowInsets.getSystemWindowInsetTop();
+            lpToolbar.leftMargin += windowInsets.getSystemWindowInsetLeft();
+            lpToolbar.rightMargin += windowInsets.getSystemWindowInsetRight();
+            toolbar.setLayoutParams(lpToolbar);*/
+
+            // clear this listener so insets aren't re-applied
+            drawerLayout.setOnApplyWindowInsetsListener(null);
+            return windowInsets.consumeSystemWindowInsets();
+        });
+    }
+
 }
