@@ -4,4 +4,7 @@
     <string name="use_camera">Use Camera</string>
     <string name="upload_from_gallery">Upload from Gallery</string>
     <string name="rounded_bottom_sheet">Rounded Bottom Sheet</string>
+    <string name="show_bottom_sheet">Show Bottom Sheet</string>
+    <string name="show_list">Show List</string>
+    <string name="implementing_material_components_in_android">Implementing Material Components in Android</string>
 </resources>
