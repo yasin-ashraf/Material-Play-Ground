@@ -2,7 +2,6 @@ package com.yasin.materialplayground.RoundedBottomSheet;
 
 import android.app.Dialog;
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +57,12 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             onOptionSelectedListener.OnOptionSelected(USE_GALLERY);
             dismiss();
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getDialog().getWindow().findViewById(com.google.android.material.R.id.container).setFitsSystemWindows(false);
     }
 
     public interface OnOptionSelectedListener {

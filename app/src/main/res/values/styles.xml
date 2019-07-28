@@ -14,11 +14,9 @@
 
 
     <style name="RoundedBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
-        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsFloating">true</item>
         <item name="bottomSheetStyle">@style/BottomSheet</item>
-        <item name="android:windowAnimationStyle">@null</item> <!--to remove weird blinking-->
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowBackground">@color/colorAccentDim</item>
     </style>
 
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">

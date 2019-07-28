@@ -3,5 +3,5 @@
     android:id="@+id/listview_background_shape">
     <corners android:topLeftRadius="20dp"
         android:topRightRadius="20dp"/>
-    <solid android:color="#f4f4f4" />
+    <solid android:color="#fff" />
 </shape>
