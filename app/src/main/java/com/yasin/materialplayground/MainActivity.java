@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.button.MaterialButton;
 import com.yasin.materialplayground.RoundedBottomSheet.RoundedBottomSheetActivity;
+import com.yasin.materialplayground.shrinkingButton.ShrinkButtonActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         TextView roundedBottomSheet = findViewById(R.id.tv_rounded_bottom_sheet);
         roundedBottomSheet.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, RoundedBottomSheetActivity.class));
+        });
+
+        TextView shrinkingButton = findViewById(R.id.tv_shrink_button);
+        shrinkingButton.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ShrinkButtonActivity.class));
         });
     }
 

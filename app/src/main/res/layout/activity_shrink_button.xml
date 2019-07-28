@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/shrink_button"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:background="@drawable/shape_rectangle_corner_4"
+        android:elevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/shrink_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="true"
+            android:text="@string/shrink_me"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#fff"/>
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:elevation="4dp"
+        android:visibility="invisible"
+        android:background="@drawable/circle_yellow"
+        app:layout_constraintStart_toStartOf="@id/shrink_button"
+        app:layout_constraintEnd_toEndOf="@id/shrink_button"
+        app:layout_constraintTop_toTopOf="@id/shrink_button"
+        android:indeterminateTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/shrink_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

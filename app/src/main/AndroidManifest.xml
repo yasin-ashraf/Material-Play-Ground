@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RoundedBottomSheet.RoundedBottomSheetActivity" />
+        <activity android:name=".shrinkingButton.ShrinkButtonActivity" />
     </application>
 
 </manifest>

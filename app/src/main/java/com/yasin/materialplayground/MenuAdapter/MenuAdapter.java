@@ -1,4 +1,4 @@
-package com.yasin.materialplayground.Adapter;
+package com.yasin.materialplayground.MenuAdapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
