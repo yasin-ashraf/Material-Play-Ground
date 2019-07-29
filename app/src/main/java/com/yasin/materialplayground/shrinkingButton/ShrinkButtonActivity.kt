@@ -1,11 +1,11 @@
 package com.yasin.materialplayground.shrinkingButton
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.animation.doOnEnd
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.activity_shrink_button.*
 
@@ -17,10 +17,7 @@ class ShrinkButtonActivity : AppCompatActivity() {
         setContentView(R.layout.activity_shrink_button)
         shrink_button.setOnClickListener {
             shrinkButton()
-            Handler().postDelayed({
-                progress_circular.visibility = View.VISIBLE
-                shrink_me.visibility = View.INVISIBLE
-            },300)
+            showProgressBar()
         }
     }
 
@@ -35,11 +32,19 @@ class ShrinkButtonActivity : AppCompatActivity() {
             }
         }.also {
             it.duration = 500
-//            it.doOnEnd {
-//                progress_circular.visibility = View.VISIBLE
-//                shrink_me.visibility = View.INVISIBLE
-//            }
             it.start()
         }
+    }
+
+    private fun showProgressBar() {
+        shrink_me.animate()
+                .alpha(1f)
+                .setDuration(300)
+                .setListener(object : AnimatorListenerAdapter(){
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+                        progress_circular.visibility = View.VISIBLE
+                    }
+                })
     }
 }
