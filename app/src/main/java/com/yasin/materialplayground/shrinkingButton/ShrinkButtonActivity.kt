@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.ViewAnimationUtils
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,9 @@ class ShrinkButtonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shrink_button)
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
         shrink_button.setOnClickListener {
             shrinkButton()
             showProgressBar()
@@ -46,7 +50,9 @@ class ShrinkButtonActivity : AppCompatActivity() {
                     override fun onAnimationEnd(animation: Animator?) {
                         super.onAnimationEnd(animation)
                         progress_circular.visibility = View.VISIBLE
-                        reveal()
+                        Handler().postDelayed(({
+                            reveal()
+                        }),2000)
                     }
                 })
     }
@@ -61,8 +67,7 @@ class ShrinkButtonActivity : AppCompatActivity() {
         val reveal = ViewAnimationUtils
                 .createCircularReveal(view, startX, startY, progress_circular.width * 1f, finalRadius)
 
-        reveal.duration = 1000
-//        reveal.startDelay = 2000
+        reveal.duration = 2000
         view.visibility = View.VISIBLE
         reveal.start()
     }
