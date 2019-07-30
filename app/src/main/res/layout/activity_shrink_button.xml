@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/activity_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -40,5 +42,12 @@
         app:layout_constraintTop_toTopOf="@id/shrink_button"
         android:indeterminateTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/shrink_button"/>
+
+    <View
+        android:id="@+id/view"
+        android:background="@color/colorSecondary"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

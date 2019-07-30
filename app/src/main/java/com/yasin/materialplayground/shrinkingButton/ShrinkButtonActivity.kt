@@ -5,9 +5,11 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
+import android.view.ViewAnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.activity_shrink_button.*
+import kotlin.math.max
 
 
 class ShrinkButtonActivity : AppCompatActivity() {
@@ -44,7 +46,24 @@ class ShrinkButtonActivity : AppCompatActivity() {
                     override fun onAnimationEnd(animation: Animator?) {
                         super.onAnimationEnd(animation)
                         progress_circular.visibility = View.VISIBLE
+                        reveal()
                     }
                 })
+    }
+
+    private fun reveal() {
+        val viewWidth = view.width
+        val viewHeight = view.height
+        val finalRadius = max(viewWidth, viewHeight) * 1.2f // to over-bound the view
+
+        val startX = (progress_circular.x + ( progress_circular.width / 2 )).toInt()
+        val startY = (progress_circular.y + ( progress_circular.width / 2 )).toInt()
+        val reveal = ViewAnimationUtils
+                .createCircularReveal(view, startX, startY, progress_circular.width * 1f, finalRadius)
+
+        reveal.duration = 1000
+//        reveal.startDelay = 2000
+        view.visibility = View.VISIBLE
+        reveal.start()
     }
 }
