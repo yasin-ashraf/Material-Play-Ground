@@ -9,7 +9,7 @@
   <group
       android:name="shadow">
 
-    <path android:pathData="M 50,20 A 11,10 0 0,0 50,80 A 11,11 0 0,0 50,20">
+    <path android:pathData="M 50,20 A 10,10 0 0,0 50,80 A 10,10 0 0,0 50,20">
 
       <aapt:attr name="android:fillColor">
 
@@ -20,10 +20,7 @@
             android:type="radial">
           <item
               android:color="#4C000000"
-              android:offset=".2" />
-          <item
-              android:color="#4C000000"
-              android:offset="0.2" />
+              android:offset=".7" />
           <item
               android:color="#00000000"
               android:offset="1" />

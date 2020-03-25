@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.button.MaterialButton;
 import com.yasin.materialplayground.RoundedBottomSheet.RoundedBottomSheetActivity;
 import com.yasin.materialplayground.shrinkingButton.ShrinkButtonActivity;
+import com.yasin.materialplayground.vectorDrawables.VectorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         TextView shrinkingButton = findViewById(R.id.tv_shrink_button);
         shrinkingButton.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, ShrinkButtonActivity.class));
+        });
+
+        TextView animatedVector = findViewById(R.id.tv_vector);
+        animatedVector.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, VectorActivity.class));
         });
     }
 
