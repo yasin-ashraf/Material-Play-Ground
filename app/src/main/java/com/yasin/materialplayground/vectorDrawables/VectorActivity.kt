@@ -1,8 +1,8 @@
 package com.yasin.materialplayground.vectorDrawables
 
+import android.R.attr
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.activity_vector_drawable.avd
@@ -13,16 +13,18 @@ import kotlinx.android.synthetic.main.activity_vector_drawable.avd
 
 class VectorActivity : AppCompatActivity() {
 
+  private var isChecked : Boolean = false
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_vector_drawable)
+    avd.setOnClickListener {
+      isChecked = !isChecked
+      val stateSet = intArrayOf(attr.state_checked * if (isChecked) 1 else -1)
+      avd.setImageState(stateSet,true)
+//      val animatable = avd.drawable as Animatable
+//      animatable.start()
+    }
   }
 
-  override fun onResume() {
-    super.onResume()
-    Handler().postDelayed({
-      val animatable : Animatable = avd.drawable as Animatable
-      animatable.start()
-    },2000)
-  }
 }

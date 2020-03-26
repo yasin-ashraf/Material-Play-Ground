@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:id="@+id/add_note"
+      android:drawable="@drawable/ic_add_note" />
+
+  <item
+      android:id="@+id/done_note"
+      android:drawable="@drawable/ic_done_note"
+      android:state_checked="true"/>
+
+  <transition
+      android:drawable="@drawable/avd_add_note"
+      android:fromId="@id/add_note"
+      android:toId="@id/done_note"/>
+
+  <transition
+      android:drawable="@drawable/avd_add_note_reverse"
+      android:fromId="@id/done_note"
+      android:toId="@id/add_note"/>
+
+</animated-selector>
