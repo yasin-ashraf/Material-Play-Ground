@@ -30,19 +30,27 @@ class VectorActivity : AppCompatActivity() {
       animatable.start()
       isChecked = !isChecked
       //animator state selector not working here. no idea why?!
-      animatable.registerAnimationCallback(@RequiresApi(VERSION_CODES.M)
-      object : Animatable2.AnimationCallback() {
-        override fun onAnimationEnd(drawable: Drawable?) {
-          super.onAnimationEnd(drawable)
-          if(isChecked){
-            val animatedVectorDrawable2 = getDrawable(R.drawable.add_note_reverse) as AnimatedVectorDrawable
-            avd.setImageDrawable(animatedVectorDrawable2)
-          }else {
-            val animatedVectorDrawable2 = getDrawable(R.drawable.add_note) as AnimatedVectorDrawable
-            avd.setImageDrawable(animatedVectorDrawable2)
-          }
-        }
-      })
+      animatable.registerAnimationCallback(
+          @RequiresApi(VERSION_CODES.M)
+          object : Animatable2.AnimationCallback() {
+
+            override fun onAnimationEnd(drawable: Drawable?) {
+              super.onAnimationEnd(drawable)
+
+              if (isChecked) {
+                val animatedVectorDrawable2 =
+                  getDrawable(R.drawable.add_note_reverse) as AnimatedVectorDrawable
+                avd.setImageDrawable(animatedVectorDrawable2)
+
+              } else {
+
+                val animatedVectorDrawable2 =
+                  getDrawable(R.drawable.add_note) as AnimatedVectorDrawable
+                avd.setImageDrawable(animatedVectorDrawable2)
+              }
+
+            }
+          })
     }
   }
 
