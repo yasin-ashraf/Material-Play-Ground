@@ -1,7 +1,7 @@
 package com.yasin.materialplayground.vectorDrawables
 
+import android.R.attr
 import android.graphics.drawable.Animatable2
-import android.graphics.drawable.Animatable2.AnimationCallback
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build.VERSION_CODES
@@ -49,21 +49,14 @@ class VectorActivity : AppCompatActivity() {
                   getDrawable(R.drawable.add_note) as AnimatedVectorDrawable
                 avd.setImageDrawable(animatedVectorDrawable2)
               }
-
             }
           })
     }
 
-
     avd_1.setOnClickListener {
-      val animatable = avd_1.drawable as AnimatedVectorDrawable
-      animatable.start()
-      animatable.registerAnimationCallback(object : AnimationCallback() {
-        override fun onAnimationEnd(drawable: Drawable?) {
-          super.onAnimationEnd(drawable)
-          animatable.reset()
-        }
-      })
+      isChecked = !isChecked
+      val stateSet = intArrayOf(attr.state_checked * if(isChecked) 1 else -1)
+      avd_1.setImageState(stateSet,true)
     }
   }
 

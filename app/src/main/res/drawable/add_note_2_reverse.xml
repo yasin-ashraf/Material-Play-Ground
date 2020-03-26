@@ -1,0 +1,29 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/ic_note_done">
+
+    <target android:name="all_group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:duration="600"
+                android:valueFrom="0"
+                android:valueTo="-360"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="tick">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:startOffset="400"
+                android:duration="200"
+                android:valueFrom="M 136.57 100.922 C 135.352 99.703 133.371 99.703 132.152 100.922 L 124.718 108.356 C 123.594 109.48 122.47 110.604 121.345 111.729 C 119.661 113.413 117.976 115.098 116.291 116.783 L 109.367 123.707 L 99.078 113.422 C 97.859 112.203 95.879 112.203 94.66 113.422 C 93.441 114.641 93.441 116.621 94.66 117.84 L 107.16 130.34 C 107.773 130.945 108.57 131.25 109.371 131.25 C 110.172 131.25 110.973 130.945 111.57 130.34 C 113.175 128.735 114.781 127.129 116.386 125.524 L 123.72 118.19 L 129.327 112.583 C 131.741 110.169 134.156 107.754 136.57 105.34 C 137.789 104.121 137.789 102.141 136.57 100.922 Z M 136.57 100.922"
+                android:valueTo="M 128.121 112.504 C 124.996 112.504 121.871 112.504 118.746 112.504 L 118.746 103.129 C 118.746 101.402 117.348 100.004 115.621 100.004 C 113.898 100.004 112.496 101.402 112.496 103.129 L 112.496 112.504 L 103.121 112.504 C 101.398 112.504 99.996 113.902 99.996 115.629 C 99.996 117.352 101.398 118.754 103.121 118.754 L 112.496 118.754 C 112.496 121.878 112.496 125.001 112.496 128.125 C 112.496 129.852 113.898 131.25 115.621 131.25 C 117.348 131.25 118.746 129.852 118.746 128.125 L 118.746 118.754 L 128.121 118.754 C 129.848 118.754 131.246 117.352 131.246 115.629 C 131.246 113.902 129.848 112.504 128.121 112.504 Z M 128.121 112.504"
+                android:valueType="pathType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+</animated-vector>
