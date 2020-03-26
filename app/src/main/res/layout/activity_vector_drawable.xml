@@ -19,7 +19,7 @@
       android:id="@+id/avd"
       android:layout_width="100dp"
       android:layout_height="100dp"
-      app:srcCompat="@drawable/asl_add_note"
+      app:srcCompat="@drawable/asl_pathmorph_drawer"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent"
