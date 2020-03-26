@@ -1,17 +1,16 @@
 package com.yasin.materialplayground.vectorDrawables
 
-import android.R.attr
-import android.graphics.drawable.Animatable
 import android.graphics.drawable.Animatable2
+import android.graphics.drawable.Animatable2.AnimationCallback
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
-import android.os.Handler
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.activity_vector_drawable.avd
+import kotlinx.android.synthetic.main.activity_vector_drawable.avd_1
 
 /**
  * Created by Yasin on 24/3/20.
@@ -25,6 +24,8 @@ class VectorActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_vector_drawable)
+
+    //add note 1
     avd.setOnClickListener {
       val animatable = avd.drawable as AnimatedVectorDrawable
       animatable.start()
@@ -51,6 +52,18 @@ class VectorActivity : AppCompatActivity() {
 
             }
           })
+    }
+
+
+    avd_1.setOnClickListener {
+      val animatable = avd_1.drawable as AnimatedVectorDrawable
+      animatable.start()
+      animatable.registerAnimationCallback(object : AnimationCallback() {
+        override fun onAnimationEnd(drawable: Drawable?) {
+          super.onAnimationEnd(drawable)
+          animatable.reset()
+        }
+      })
     }
   }
 
