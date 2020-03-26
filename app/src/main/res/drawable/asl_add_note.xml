@@ -11,12 +11,12 @@
       android:state_checked="true"/>
 
   <transition
-      android:drawable="@drawable/avd_add_note"
+      android:drawable="@drawable/add_note"
       android:fromId="@id/add_note"
       android:toId="@id/done_note"/>
 
   <transition
-      android:drawable="@drawable/avd_add_note_reverse"
+      android:drawable="@drawable/add_note_reverse"
       android:fromId="@id/done_note"
       android:toId="@id/add_note"/>
 
