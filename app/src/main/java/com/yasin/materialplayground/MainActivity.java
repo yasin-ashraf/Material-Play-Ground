@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.button.MaterialButton;
 import com.yasin.materialplayground.RoundedBottomSheet.RoundedBottomSheetActivity;
+import com.yasin.materialplayground.motion.MoveButtonActivity;
 import com.yasin.materialplayground.shrinkingButton.ShrinkButtonActivity;
 import com.yasin.materialplayground.vectorDrawables.VectorActivity;
 
@@ -56,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
         TextView animatedVector = findViewById(R.id.tv_vector);
         animatedVector.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, VectorActivity.class));
+        });
+
+        TextView touchMove = findViewById(R.id.tv_move);
+        touchMove.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, MoveButtonActivity.class));
         });
     }
 
