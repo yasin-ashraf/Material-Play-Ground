@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="ElasticFrameLayout">
+    <attr name="elasticity_value" format="float"/>
+    <attr name="shouldContentScale" format="boolean" />
+    <attr name="scaleFactor_value" format="float" />
+    <attr name="drag_dismiss_distance" format="dimension" />
+  </declare-styleable>
+</resources>

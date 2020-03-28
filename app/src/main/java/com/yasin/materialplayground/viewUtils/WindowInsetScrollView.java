@@ -1,4 +1,4 @@
-package com.yasin.materialplayground.ViewUtils;
+package com.yasin.materialplayground.viewUtils;
 
 import android.content.Context;
 import android.util.AttributeSet;
