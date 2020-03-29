@@ -3,6 +3,7 @@ package com.yasin.materialplayground.viewUtils
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.AttrRes
@@ -32,6 +33,7 @@ class ElasticFrameLayout @JvmOverloads constructor(
   private var isDraggingDown : Boolean = false
   private var isDraggingUp : Boolean = false
   private var totalDrag : Float = 0.0f
+  private var lastMotionEvent : Int = Int.MIN_VALUE
 
   init {
     val a : TypedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ElasticFrameLayout, defStyleAttr,defStyleRes)
@@ -40,6 +42,11 @@ class ElasticFrameLayout @JvmOverloads constructor(
     elasticity = a.getFloat(R.styleable.ElasticFrameLayout_elasticity_value,1.0f)
     dragDismissDistance = a.getDimensionPixelSize(R.styleable.ElasticFrameLayout_drag_dismiss_distance,0)
     a.recycle()
+  }
+
+  override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
+    lastMotionEvent = ev?.action ?: Int.MIN_VALUE
+    return super.onInterceptTouchEvent(ev)
   }
 
   /**
@@ -68,18 +75,26 @@ class ElasticFrameLayout @JvmOverloads constructor(
   }
 
   override fun onStopNestedScroll(child: View?) {
-    // dismiss scroll : move view back to original position
-    animate()
-        .translationY(0f)
-        .scaleX(1f)
-        .scaleY(1f)
-        .setDuration(200L)
-        .setInterpolator(FastOutSlowInInterpolator())
-        .setListener(null)
-        .start()
-    totalDrag = 0.0f
-    isDraggingUp = false
-    isDraggingDown = false
+    //if touch is not continuous at first, view suddenly move to middle without elastic movement
+    //move view back to original position in such case
+    if(lastMotionEvent == MotionEvent.ACTION_DOWN){
+      translationY = 0f
+      scaleY = 1f
+      scaleX = 1f
+    }else {
+      // dismiss scroll : move view back to original position
+      animate()
+          .translationY(0f)
+          .scaleX(1f)
+          .scaleY(1f)
+          .setDuration(200L)
+          .setInterpolator(FastOutSlowInInterpolator())
+          .setListener(null)
+          .start()
+      totalDrag = 0.0f
+      isDraggingUp = false
+      isDraggingDown = false
+    }
   }
 
   private fun translateView(scrollAmount: Int) {
