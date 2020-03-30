@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.Hold
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.fragment_tasks.button_create_new_task
+import kotlinx.android.synthetic.main.fragment_tasks.rv_tasks
 
 /**
  * Created by Yasin on 30/3/20.
@@ -33,6 +34,9 @@ class TasksFragment : Fragment() {
     savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
+
+    rv_tasks.adapter = TasksAdapter()
+
     button_create_new_task.setOnClickListener {
       val extras = FragmentNavigatorExtras(button_create_new_task to "container_transition")
       findNavController().navigate(R.id.action_tasksFragment_to_createNewTaskFragment, null, null, extras)

@@ -10,6 +10,11 @@
       android:id="@+id/rv_tasks"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
+      android:clipToPadding="false"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
       tools:listitem="@layout/list_item_task"
       />
 
@@ -18,17 +23,18 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="20dp"
-      android:text="@string/action_create_new_task"
-      android:textColor="@color/colorText"
       android:fontFamily="@font/kalam_bold"
+      android:text="@string/action_create_new_task"
       android:textAllCaps="false"
+      android:textColor="@color/colorText"
+      android:transitionName="container_transition"
       app:backgroundTint="@color/colorPrimary"
       app:icon="@drawable/asl_add_note_2"
       app:iconTint="@color/colorText"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:rippleColor="@color/colorAccentDim"
-      android:transitionName="container_transition"/>
+      />
 
   <LinearLayout
       android:id="@+id/empty"

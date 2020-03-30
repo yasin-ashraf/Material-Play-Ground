@@ -11,7 +11,8 @@
       android:label="TasksFragment" >
     <action
         android:id="@+id/action_tasksFragment_to_createNewTaskFragment"
-        app:destination="@id/createNewTaskFragment" />
+        app:destination="@id/createNewTaskFragment"
+        app:exitAnim="@anim/fade_out" />
   </fragment>
   <fragment
       android:id="@+id/createNewTaskFragment"
