@@ -99,6 +99,18 @@
             android:drawableStart="@drawable/ic_identifier"
             android:drawablePadding="0dp"/>
 
+        <TextView
+            android:id="@+id/tv_transform"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/motion_transform"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_identifier"
+            android:drawablePadding="0dp"/>
+
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

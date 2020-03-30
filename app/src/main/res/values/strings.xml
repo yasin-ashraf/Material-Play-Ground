@@ -1,5 +1,16 @@
 <resources>
   <string name="app_name">Material Play Ground</string>
+
+  <string name="sample">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Nisl nisi scelerisque eu ultrices. Sed pulvinar proin gravida hendrerit lectus a. Amet risus nullam eget felis eget. Porttitor leo a diam sollicitudin tempor id. Vulputate eu scelerisque felis imperdiet proin. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Nulla porttitor massa id neque aliquam vestibulum. Libero nunc consequat interdum varius sit amet mattis vulputate. Ut porttitor leo a diam. Lobortis feugiat vivamus at augue eget arcu dictum.
+
+Faucibus nisl tincidunt eget nullam non nisi. Vel facilisis volutpat est velit egestas dui id ornare. Dui nunc mattis enim ut. Dignissim sodales ut eu sem integer vitae. Eget aliquet nibh praesent tristique magna. Auctor urna nunc id cursus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Laoreet id donec ultrices tincidunt. Posuere ac ut consequat semper viverra nam libero. Non enim praesent elementum facilisis. Urna condimentum mattis pellentesque id nibh tortor id. Donec et odio pellentesque diam volutpat commodo sed egestas. Ac tortor vitae purus faucibus ornare suspendisse.
+
+Enim blandit volutpat maecenas volutpat blandit. Dignissim suspendisse in est ante in nibh. Mauris rhoncus aenean vel elit scelerisque mauris. Consectetur a erat nam at lectus. Fringilla urna porttitor rhoncus dolor purus. Lectus proin nibh nisl condimentum id venenatis a condimentum. Viverra mauris in aliquam sem. Vel pharetra vel turpis nunc eget. Malesuada proin libero nunc consequat interdum varius sit. Pellentesque eu tincidunt tortor aliquam. Malesuada proin libero nunc consequat interdum varius sit. Habitant morbi tristique senectus et netus.
+
+Aliquam eleifend mi in nulla posuere. Maecenas accumsan lacus vel facilisis volutpat est. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Tellus cras adipiscing enim eu turpis egestas. In dictum non consectetur a erat nam. Ac auctor augue mauris augue neque gravida. Sit amet consectetur adipiscing elit. Dignissim sodales ut eu sem integer vitae justo. Sit amet aliquam id diam maecenas ultricies mi. Nunc sed id semper risus. Justo nec ultrices dui sapien eget mi proin sed libero. Urna molestie at elementum eu facilisis sed odio morbi. In hendrerit gravida rutrum quisque non tellus. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Libero volutpat sed cras ornare arcu dui.
+
+Laoreet sit amet cursus sit amet dictum sit amet. Ipsum consequat nisl vel pretium lectus. Adipiscing tristique risus nec feugiat in fermentum posuere urna. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Tempor orci dapibus ultrices in iaculis nunc. Consequat mauris nunc congue nisi vitae suscipit tellus mauris. Sit amet est placerat in egestas erat imperdiet sed. Ornare suspendisse sed nisi lacus sed viverra. Nec feugiat nisl pretium fusce. Enim lobortis scelerisque fermentum dui. Diam sit amet nisl suscipit adipiscing bibendum est ultricies. Cursus mattis molestie a iaculis.</string>
+
   <string name="add_photo">Add Photo</string>
   <string name="use_camera">Use Camera</string>
   <string name="upload_from_gallery">Upload from Gallery</string>
@@ -15,13 +26,17 @@
   <string name="path_arrow">M 12, 4 L 10.59,5.41 L 16.17,11 L 18.99,11 L 12,4 z M 4, 11 L 4, 13 L 18.99, 13 L 20, 12 L 18.99, 11 L 4, 11 z M 12,20 L 10.59, 18.59 L 16.17, 13 L 18.99, 13 L 12, 20z</string>
   <string name="move_button">Move Button</string>
   <string name="move_item_touch">Touch Move Item</string>
-  <string name="sample">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Nisl nisi scelerisque eu ultrices. Sed pulvinar proin gravida hendrerit lectus a. Amet risus nullam eget felis eget. Porttitor leo a diam sollicitudin tempor id. Vulputate eu scelerisque felis imperdiet proin. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Nulla porttitor massa id neque aliquam vestibulum. Libero nunc consequat interdum varius sit amet mattis vulputate. Ut porttitor leo a diam. Lobortis feugiat vivamus at augue eget arcu dictum.
-
-Faucibus nisl tincidunt eget nullam non nisi. Vel facilisis volutpat est velit egestas dui id ornare. Dui nunc mattis enim ut. Dignissim sodales ut eu sem integer vitae. Eget aliquet nibh praesent tristique magna. Auctor urna nunc id cursus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Laoreet id donec ultrices tincidunt. Posuere ac ut consequat semper viverra nam libero. Non enim praesent elementum facilisis. Urna condimentum mattis pellentesque id nibh tortor id. Donec et odio pellentesque diam volutpat commodo sed egestas. Ac tortor vitae purus faucibus ornare suspendisse.
-
-Enim blandit volutpat maecenas volutpat blandit. Dignissim suspendisse in est ante in nibh. Mauris rhoncus aenean vel elit scelerisque mauris. Consectetur a erat nam at lectus. Fringilla urna porttitor rhoncus dolor purus. Lectus proin nibh nisl condimentum id venenatis a condimentum. Viverra mauris in aliquam sem. Vel pharetra vel turpis nunc eget. Malesuada proin libero nunc consequat interdum varius sit. Pellentesque eu tincidunt tortor aliquam. Malesuada proin libero nunc consequat interdum varius sit. Habitant morbi tristique senectus et netus.
-
-Aliquam eleifend mi in nulla posuere. Maecenas accumsan lacus vel facilisis volutpat est. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Tellus cras adipiscing enim eu turpis egestas. In dictum non consectetur a erat nam. Ac auctor augue mauris augue neque gravida. Sit amet consectetur adipiscing elit. Dignissim sodales ut eu sem integer vitae justo. Sit amet aliquam id diam maecenas ultricies mi. Nunc sed id semper risus. Justo nec ultrices dui sapien eget mi proin sed libero. Urna molestie at elementum eu facilisis sed odio morbi. In hendrerit gravida rutrum quisque non tellus. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Libero volutpat sed cras ornare arcu dui.
-
-Laoreet sit amet cursus sit amet dictum sit amet. Ipsum consequat nisl vel pretium lectus. Adipiscing tristique risus nec feugiat in fermentum posuere urna. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Tempor orci dapibus ultrices in iaculis nunc. Consequat mauris nunc congue nisi vitae suscipit tellus mauris. Sit amet est placerat in egestas erat imperdiet sed. Ornare suspendisse sed nisi lacus sed viverra. Nec feugiat nisl pretium fusce. Enim lobortis scelerisque fermentum dui. Diam sit amet nisl suscipit adipiscing bibendum est ultricies. Cursus mattis molestie a iaculis.</string>
+  <string name="action_create_new_task">Create New Task</string>
+  <string name="label_task_details">Task Details</string>
+  <string name="label_add_description">Add description</string>
+  <string name="label_date_and_time">Date and Time</string>
+  <string name="label_all_day_event">All Day Event</string>
+  <string name="label_start_date">Start Date</string>
+  <string name="label_end_date">End Date</string>
+  <string name="action_create">Create</string>
+  <string name="we_didn_t_lose_the_game">We didn\'t lose the game..we just ran out of time..</string>
+  <string name="label_task_created">Task Created</string>
+  <string name="label_task_has_been_added_to_list">Task has been added to your list</string>
+  <string name="action_done">Done</string>
+  <string name="motion_transform">Motion Transform</string>
 </resources>

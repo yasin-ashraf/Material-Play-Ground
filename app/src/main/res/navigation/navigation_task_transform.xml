@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_task_transform"
+    app:startDestination="@id/tasksFragment">
+
+
+  <fragment
+      android:id="@+id/tasksFragment"
+      android:name="com.yasin.materialplayground.materialTransform.TasksFragment"
+      android:label="TasksFragment" >
+    <action
+        android:id="@+id/action_tasksFragment_to_createNewTaskFragment"
+        app:destination="@id/createNewTaskFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/createNewTaskFragment"
+      android:name="com.yasin.materialplayground.materialTransform.CreateNewTaskFragment"
+      android:label="CreateNewTaskFragment" >
+    <action
+        android:id="@+id/action_createNewTaskFragment_to_taskCreatedFragment"
+        app:destination="@id/taskCreatedFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/taskCreatedFragment"
+      android:name="com.yasin.materialplayground.materialTransform.TaskCreatedFragment"
+      android:label="TaskCreatedFragment" >
+    <action
+        android:id="@+id/action_taskCreatedFragment_to_tasksFragment2"
+        app:popUpTo="@id/tasksFragment" />
+  </fragment>
+</navigation>

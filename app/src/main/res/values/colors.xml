@@ -7,4 +7,6 @@
     <color name="colorAccentDim">#60FFE728</color>
     <color name="colorSecondary">#D81B60</color>
     <color name="colorText">#424241</color>
+    <color name="colorTextLight">#b3b3b3</color>
+    <color name="colorTextTransparent">#80424241</color>
 </resources>

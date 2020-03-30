@@ -25,6 +25,7 @@
     <activity android:name=".motion.MoveButtonActivity" />
     <activity android:name=".motion.ElasticLayoutActivity"
         android:theme="@style/AppTheme.Translucent" />
+    <activity android:name=".materialTransform.TaskMotionTransformActivity" />
   </application>
 
 </manifest>
