@@ -1,19 +1,12 @@
 package com.yasin.materialplayground.materialTransform
 
 import android.os.Bundle
-import android.transition.Slide
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.Interpolator
-import android.view.animation.OvershootInterpolator
 import androidx.fragment.app.Fragment
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.transition.MaterialFadeThrough
-import com.google.android.material.transition.MaterialSharedAxis
 import com.google.android.material.transition.Scale
 import com.yasin.materialplayground.R
 import com.yasin.materialplayground.viewUtils.FastOutUltraSlowIn
@@ -27,16 +20,17 @@ class TaskCreatedFragment : Fragment(){
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     //MaterialAxis Transition
-    /*enterTransition = MaterialSharedAxis.create(requireContext(), MaterialSharedAxis.Z,true).apply {
+    enterTransition = Scale().apply {
+      incomingStartScale = 0f
+      outgoingEndScale = 1f
       duration = 800
       interpolator = FastOutUltraSlowIn()
-    }*/
-    postponeEnterTransition()
+    }
     returnTransition = Scale().apply {
       outgoingStartScale = 1f
       outgoingEndScale = 0f
       duration = 400
-      interpolator = FastOutLinearInInterpolator()
+      interpolator = FastOutUltraSlowIn()
     }
   }
 
