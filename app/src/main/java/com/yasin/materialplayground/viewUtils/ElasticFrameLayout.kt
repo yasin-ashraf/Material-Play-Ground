@@ -15,6 +15,7 @@ import kotlin.math.log10
 
 /**
  * Created by Yasin on 28/3/20.
+ * A simpler version of Nick Butcher's Elastic Layout from Plaid App
  */
 class ElasticFrameLayout @JvmOverloads constructor(
   context: Context,
@@ -27,21 +28,31 @@ class ElasticFrameLayout @JvmOverloads constructor(
   private var shouldContentScale : Boolean = false
   private var scaleFactor : Float = 1.0f
   private var elasticity : Float = 1.0f
-  private var dragDismissDistance : Int = Int.MAX_VALUE
+  private var dragDismissDistance : Float = Float.MAX_VALUE
 
   //other properties
   private var isDraggingDown : Boolean = false
   private var isDraggingUp : Boolean = false
   private var totalDrag : Float = 0.0f
   private var lastMotionEvent : Int = Int.MIN_VALUE
+  private lateinit var listener: ElasticDragCallback
 
   init {
     val a : TypedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ElasticFrameLayout, defStyleAttr,defStyleRes)
     shouldContentScale = a.getBoolean(R.styleable.ElasticFrameLayout_shouldContentScale,false)
     scaleFactor = a.getFloat(R.styleable.ElasticFrameLayout_scaleFactor_value,1.0f)
     elasticity = a.getFloat(R.styleable.ElasticFrameLayout_elasticity_value,1.0f)
-    dragDismissDistance = a.getDimensionPixelSize(R.styleable.ElasticFrameLayout_drag_dismiss_distance,0)
+    dragDismissDistance = a.getDimensionPixelSize(R.styleable.ElasticFrameLayout_drag_dismiss_distance,0).toFloat()
     a.recycle()
+  }
+
+  fun setListener(callback: ElasticDragCallback) {
+    this.listener = callback
+  }
+
+  interface ElasticDragCallback {
+    fun onDrag(dragDismissDistance : Float, draggedDistance : Float)
+    fun onDragDismiss()
   }
 
   override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
@@ -82,15 +93,19 @@ class ElasticFrameLayout @JvmOverloads constructor(
       scaleY = 1f
       scaleX = 1f
     }else {
-      // dismiss scroll : move view back to original position
-      animate()
-          .translationY(0f)
-          .scaleX(1f)
-          .scaleY(1f)
-          .setDuration(200L)
-          .setInterpolator(FastOutSlowInInterpolator())
-          .setListener(null)
-          .start()
+      if(abs(totalDrag) > dragDismissDistance){
+        listener.onDragDismiss()
+      }else {
+        //move view back to original position
+        animate()
+            .translationY(0f)
+            .scaleX(1f)
+            .scaleY(1f)
+            .setDuration(200L)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .setListener(null)
+            .start()
+      }
       totalDrag = 0.0f
       isDraggingUp = false
       isDraggingDown = false
@@ -125,6 +140,8 @@ class ElasticFrameLayout @JvmOverloads constructor(
       scaleX = scale
       scaleY = scale
     }
+    //dispatch drag callback
+    listener.onDrag(dragDismissDistance, abs(dragTo))
 
     // if we've reversed direction and gone past the settle point then clear the flags to
     // allow the list to get the scroll events & reset any transforms

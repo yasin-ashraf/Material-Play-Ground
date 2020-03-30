@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.yasin.materialplayground.viewUtils.ElasticFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:drag_dismiss_distance="200dp"
-    app:elasticity_value="1.0"
-    app:scaleFactor_value="0.5"
-    app:shouldContentScale="true">
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <androidx.core.widget.NestedScrollView
+  <com.yasin.materialplayground.viewUtils.ElasticFrameLayout
+      android:id="@+id/elastic"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="match_parent"
+      app:drag_dismiss_distance="200dp"
+      app:elasticity_value="1.0"
+      app:scaleFactor_value="0.5"
+      app:shouldContentScale="false">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent">
+        android:layout_height="wrap_content">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/colorText">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="600dp"
             android:src="@drawable/ic_curve"/>
 
-    </LinearLayout>
+      </LinearLayout>
 
-  </androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
-</com.yasin.materialplayground.viewUtils.ElasticFrameLayout>
+  </com.yasin.materialplayground.viewUtils.ElasticFrameLayout>
+
+  <ProgressBar
+      android:id="@+id/progressBar"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginBottom="10dp"
+      android:indeterminateTint="@color/colorSecondary"
+      app:layout_constraintBottom_toTopOf="@id/elastic"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
