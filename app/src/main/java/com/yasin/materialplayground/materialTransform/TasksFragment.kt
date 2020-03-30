@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.transition.Hold
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.fragment_tasks.button_create_new_task
 import kotlinx.android.synthetic.main.fragment_tasks.rv_tasks

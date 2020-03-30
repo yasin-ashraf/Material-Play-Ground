@@ -1,12 +1,22 @@
 package com.yasin.materialplayground.materialTransform
 
 import android.os.Bundle
+import android.transition.Slide
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.Interpolator
+import android.view.animation.OvershootInterpolator
 import androidx.fragment.app.Fragment
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialFadeThrough
+import com.google.android.material.transition.MaterialSharedAxis
+import com.google.android.material.transition.Scale
 import com.yasin.materialplayground.R
+import com.yasin.materialplayground.viewUtils.FastOutUltraSlowIn
 import kotlinx.android.synthetic.main.fragment_task_created.button_done
 
 /**
@@ -16,6 +26,18 @@ class TaskCreatedFragment : Fragment(){
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    //MaterialAxis Transition
+    /*enterTransition = MaterialSharedAxis.create(requireContext(), MaterialSharedAxis.Z,true).apply {
+      duration = 800
+      interpolator = FastOutUltraSlowIn()
+    }*/
+    postponeEnterTransition()
+    returnTransition = Scale().apply {
+      outgoingStartScale = 1f
+      outgoingEndScale = 0f
+      duration = 400
+      interpolator = FastOutLinearInInterpolator()
+    }
   }
 
   override fun onCreateView(
@@ -32,7 +54,7 @@ class TaskCreatedFragment : Fragment(){
   ) {
     super.onViewCreated(view, savedInstanceState)
     button_done.setOnClickListener {
-      findNavController().navigate(R.id.action_taskCreatedFragment_to_tasksFragment2)
+      findNavController().navigateUp()
     }
   }
 }

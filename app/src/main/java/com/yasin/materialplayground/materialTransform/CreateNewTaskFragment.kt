@@ -26,6 +26,12 @@ class CreateNewTaskFragment : Fragment() {
       fadeMode = FADE_MODE_OUT
       duration = 600
     }
+
+    //MaterialAxis Transition
+//    val forward = MaterialSharedAxis.create(requireContext(),MaterialSharedAxis.Z,true)
+//    enterTransition = forward
+//    val backward = MaterialSharedAxis.create(requireContext(),MaterialSharedAxis.Z,false)
+//    exitTransition = backward
   }
 
   override fun onCreateView(
