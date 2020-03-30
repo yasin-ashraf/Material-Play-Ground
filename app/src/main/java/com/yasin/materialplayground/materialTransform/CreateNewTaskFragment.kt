@@ -9,7 +9,6 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.MaterialContainerTransform
-import com.google.android.material.transition.MaterialContainerTransform.FADE_MODE_IN
 import com.google.android.material.transition.MaterialContainerTransform.FADE_MODE_OUT
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.fragment_create_new_task.button_create
@@ -25,6 +24,7 @@ class CreateNewTaskFragment : Fragment() {
     sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
       scrimColor = resources.getColor(R.color.colorPrimary,null)
       fadeMode = FADE_MODE_OUT
+      duration = 600
     }
   }
 
