@@ -1,11 +1,16 @@
 package com.yasin.materialplayground.materialTransform
 
+import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialContainerTransform.FADE_MODE_IN
+import com.google.android.material.transition.MaterialContainerTransform.FADE_MODE_OUT
 import com.yasin.materialplayground.R
 import kotlinx.android.synthetic.main.fragment_create_new_task.button_create
 
@@ -14,8 +19,13 @@ import kotlinx.android.synthetic.main.fragment_create_new_task.button_create
  */
 class CreateNewTaskFragment : Fragment() {
 
+  @RequiresApi(VERSION_CODES.M)
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
+      scrimColor = resources.getColor(R.color.colorPrimary,null)
+      fadeMode = FADE_MODE_OUT
+    }
   }
 
   override fun onCreateView(

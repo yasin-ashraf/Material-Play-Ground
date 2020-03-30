@@ -27,7 +27,8 @@
       app:iconTint="@color/colorText"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:rippleColor="@color/colorAccentDim"/>
+      app:rippleColor="@color/colorAccentDim"
+      android:transitionName="container_transition"/>
 
   <LinearLayout
       android:id="@+id/empty"
