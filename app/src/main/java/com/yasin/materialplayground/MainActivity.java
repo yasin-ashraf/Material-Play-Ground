@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.button.MaterialButton;
-import com.yasin.materialplayground.RoundedBottomSheet.RoundedBottomSheetActivity;
+import com.yasin.materialplayground.RoundedBottomSheetDialog.RoundedBottomSheetActivity;
+import com.yasin.materialplayground.bottomSheet.BottomSheetActivity;
 import com.yasin.materialplayground.materialTransform.TaskMotionTransformActivity;
 import com.yasin.materialplayground.motion.ElasticLayoutActivity;
-import com.yasin.materialplayground.motion.MoveButtonActivity;
 import com.yasin.materialplayground.shrinkingButton.ShrinkButtonActivity;
 import com.yasin.materialplayground.vectorDrawables.VectorActivity;
 
@@ -71,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
         TextView motionTransform = findViewById(R.id.tv_transform);
         motionTransform.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, TaskMotionTransformActivity.class),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        });
+
+        TextView bottomSheet = findViewById(R.id.tv_bottom_sheet);
+        bottomSheet.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, BottomSheetActivity.class),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         });
     }

@@ -19,13 +19,14 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".RoundedBottomSheet.RoundedBottomSheetActivity" />
+    <activity android:name=".RoundedBottomSheetDialog.RoundedBottomSheetActivity" />
     <activity android:name=".shrinkingButton.ShrinkButtonActivity" />
     <activity android:name=".vectorDrawables.VectorActivity" />
     <activity android:name=".motion.MoveButtonActivity" />
     <activity android:name=".motion.ElasticLayoutActivity"
         android:theme="@style/AppTheme.Translucent" />
     <activity android:name=".materialTransform.TaskMotionTransformActivity" />
+    <activity android:name=".bottomSheet.BottomSheetActivity" />
   </application>
 
 </manifest>

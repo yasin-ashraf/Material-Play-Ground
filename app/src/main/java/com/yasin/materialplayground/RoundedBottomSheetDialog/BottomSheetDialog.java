@@ -1,4 +1,4 @@
-package com.yasin.materialplayground.RoundedBottomSheet;
+package com.yasin.materialplayground.RoundedBottomSheetDialog;
 
 import android.app.Dialog;
 import android.os.Bundle;

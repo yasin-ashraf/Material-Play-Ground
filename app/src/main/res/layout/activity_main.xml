@@ -111,6 +111,19 @@
             android:drawableStart="@drawable/ic_identifier"
             android:drawablePadding="0dp"/>
 
+        <TextView
+            android:id="@+id/tv_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/bottom_sheet"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_identifier"
+            android:drawablePadding="0dp"/>
+
+
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

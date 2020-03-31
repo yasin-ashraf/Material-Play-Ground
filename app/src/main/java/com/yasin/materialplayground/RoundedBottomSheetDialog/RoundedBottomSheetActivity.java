@@ -1,4 +1,4 @@
-package com.yasin.materialplayground.RoundedBottomSheet;
+package com.yasin.materialplayground.RoundedBottomSheetDialog;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +10,7 @@ import com.google.android.material.button.MaterialButton;
 import com.yasin.materialplayground.R;
 
 /**
- * Created by im_yasinashraf started on 20/3/19.
+ * Created by Yasin started on 20/3/19.
  */
 public class RoundedBottomSheetActivity extends AppCompatActivity implements View.OnClickListener,BottomSheetDialog.OnOptionSelectedListener{
 
