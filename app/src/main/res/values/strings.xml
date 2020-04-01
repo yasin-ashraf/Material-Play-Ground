@@ -41,4 +41,6 @@ Laoreet sit amet cursus sit amet dictum sit amet. Ipsum consequat nisl vel preti
   <string name="motion_transform">Motion Transform</string>
   <string name="we_didn_t_lose_the_game_description">I\'m sure there are many variations on the story, but the way I remember it, legendary NFL coach, Vince Lombardi, was once questioned after losing a game and he said something to the effect of, \"in my entire career, I never lost a single game...I just ran out of time\"</string>
   <string name="bottom_sheet">Bottom Sheet</string>
+  <string name="action_forgot_password">Forgot Password</string>
+  <string name="action_create_account">Create Account</string>
 </resources>
