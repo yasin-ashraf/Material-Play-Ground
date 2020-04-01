@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.transition.MaterialSharedAxis
 import com.yasin.materialplayground.R
+import com.yasin.materialplayground.materialTransform.ElasticItemTouchHelper.ReboundableViewHolder
 import com.yasin.materialplayground.viewUtils.FastOutUltraSlowIn
+import kotlinx.android.synthetic.main.list_item_task.view.card
 import kotlinx.android.synthetic.main.list_item_task.view.subTitle
 import kotlinx.android.synthetic.main.list_item_task.view.subTitle_expanded
 
@@ -31,6 +33,7 @@ class TasksAdapter : ListAdapter<Task, TaskItemViewHolder>(TasksItemDiffCallback
     holder: TaskItemViewHolder,
     position: Int
   ) {
+    holder.itemView.card.progress = 0f
     holder.itemView.setOnClickListener {
       val fadeThrough = MaterialSharedAxis.create(
           holder.itemView.context,
@@ -71,7 +74,20 @@ class TasksItemDiffCallback : DiffUtil.ItemCallback<Task>() {
   }
 }
 
-class TaskItemViewHolder(view: View) : RecyclerView.ViewHolder(view)
+class TaskItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view),ReboundableViewHolder {
+
+  override val reboundableView: View
+    get() = view.card
+
+  override fun onDrag(draggedTo: Float) {
+    //item is dragged to this value
+  }
+
+  override fun onRebound(viewHolder: ReboundableViewHolder) {
+    val interpolation = 1f
+    viewHolder.reboundableView.card.progress = interpolation
+  }
+}
 
 data class Task(
   val id: String,
