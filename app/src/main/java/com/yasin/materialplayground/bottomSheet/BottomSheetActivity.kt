@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_bottom_sheet_behaviour.arrow_left
 import kotlinx.android.synthetic.main.activity_bottom_sheet_behaviour.arrow_right
 import kotlinx.android.synthetic.main.activity_bottom_sheet_behaviour.background_container
 import kotlinx.android.synthetic.main.activity_bottom_sheet_behaviour.bg_image
+import kotlinx.android.synthetic.main.activity_bottom_sheet_behaviour.foreground_container
 import kotlin.LazyThreadSafetyMode.NONE
 
 /**
@@ -30,7 +31,9 @@ class BottomSheetActivity : AppCompatActivity() {
         0
     ).apply {
       fillColor = ColorStateList.valueOf(bgContext.getColor(R.color.terractoca_brick_dark))
-      elevation = resources.getDimension(R.dimen.plane_16) //this is not working
+      elevation = resources.getDimension(R.dimen.plane_32)
+      setShadowColor(bgContext.getColor(R.color.terractoca_brick_dark))
+      shadowCompatibilityMode = MaterialShapeDrawable.SHADOW_COMPAT_MODE_ALWAYS
       shapeAppearanceModel = ShapeAppearanceModel().toBuilder()
           .setTopLeftCorner(CornerFamily.ROUNDED,resources.getDimension(R.dimen.plane_16))
           .setTopRightCorner(CornerFamily.ROUNDED,resources.getDimension(R.dimen.plane_16))
@@ -64,6 +67,6 @@ class BottomSheetActivity : AppCompatActivity() {
       }
     })
 
-    background_container.background = sheetBgDrawable
+    foreground_container.background = sheetBgDrawable
   }
 }

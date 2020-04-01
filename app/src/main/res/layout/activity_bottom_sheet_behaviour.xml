@@ -13,7 +13,6 @@
       android:orientation="vertical"
       android:fitsSystemWindows="true"
       android:gravity="center"
-      android:src="@drawable/ic_curve"
       android:clipChildren="false">
 
     <ImageButton
@@ -104,14 +103,6 @@
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
-  <View
-      android:id="@+id/shadow"
-      android:layout_width="match_parent"
-      android:layout_height="30dp"
-      android:background="@drawable/shadow"
-      app:layout_anchorGravity="top"
-      app:layout_anchor="@id/background_container" />
-
   <FrameLayout
       android:id="@+id/background_container"
       android:layout_width="match_parent"
@@ -120,13 +111,15 @@
       app:behavior_halfExpandedRatio="0.7"
       app:behavior_hideable="false"
       app:behavior_peekHeight="70dp"
+      android:clipChildren="false"
       app:layout_behavior="@string/bottom_sheet_behavior">
 
     <LinearLayout
         android:id="@+id/foreground_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="20dp"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:paddingBottom="32dp">
@@ -141,7 +134,7 @@
             android:id="@+id/arrow_left"
             android:layout_width="15dp"
             android:layout_height="2dp"
-            android:background="@color/colorText"
+            android:background="@color/colorPrimary"
             android:transformPivotX="15dp"
             android:rotation="-15"
             app:layout_constraintStart_toStartOf="parent"
@@ -153,7 +146,7 @@
             android:id="@+id/arrow_right"
             android:layout_width="15dp"
             android:layout_height="2dp"
-            android:background="@color/colorText"
+            android:background="@color/colorPrimary"
             android:transformPivotX="0dp"
             android:rotation="15"
             app:layout_constraintTop_toTopOf="parent"
