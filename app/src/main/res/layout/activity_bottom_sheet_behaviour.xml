@@ -5,43 +5,79 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-  <View
-      android:id="@+id/scrim_view"
+  <ImageView
+      android:id="@+id/bg_image"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:alpha="0"
-      android:background="@color/colorAccentDim"
-      android:visibility="gone"
+      android:alpha="0.3"
+      android:background="@color/colorText"
+      android:fitsSystemWindows="true"
+      android:src="@drawable/ic_curve"
       />
+  <View
+      android:id="@+id/shadow"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:background="@drawable/shadow"
+      app:layout_anchorGravity="top"
+      app:layout_anchor="@id/background_container" />
 
   <FrameLayout
       android:id="@+id/background_container"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      app:behavior_halfExpandedRatio="0.7"
-      app:behavior_hideable="true"
-      app:behavior_peekHeight="70dp"
       app:behavior_fitToContents="false"
+      app:behavior_halfExpandedRatio="0.7"
+      app:behavior_hideable="false"
+      app:behavior_peekHeight="70dp"
       app:layout_behavior="@string/bottom_sheet_behavior"
-      >
+      style="@style/BottomSheet">
 
-    <!--Container to act as the drawer's foreground container and hold all navigation-->
     <LinearLayout
         android:id="@+id/foreground_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:clipToPadding="false"
-        android:paddingBottom="32dp"
-        android:backgroundTint="#c36c5d"
-        android:background="@drawable/rectangle_round_upper_corner_radius_four"
-        >
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
 
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:gravity="center"
+          android:layout_gravity="center_horizontal">
+
+        <View
+            android:id="@+id/arrow_left"
+            android:layout_width="15dp"
+            android:layout_height="2dp"
+            android:background="@color/colorText"
+            android:transformPivotX="15dp"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/arrow_right"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/arrow_right"
+            android:layout_width="15dp"
+            android:layout_height="2dp"
+            android:background="@color/colorText"
+            android:transformPivotX="0dp"
+            android:rotation="15"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/arrow_left"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
   </FrameLayout>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

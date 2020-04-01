@@ -6,4 +6,9 @@
     <attr name="scaleFactor_value" format="float" />
     <attr name="drag_dismiss_distance" format="dimension" />
   </declare-styleable>
+
+  <declare-styleable name="ShadowView">
+    <attr name="android:gravity" />
+  </declare-styleable>
+
 </resources>
