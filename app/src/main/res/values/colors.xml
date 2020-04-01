@@ -9,4 +9,10 @@
     <color name="colorText">#424241</color>
     <color name="colorTextLight">#b3b3b3</color>
     <color name="colorTextTransparent">#80424241</color>
+    
+    <color name="terractoca_pale_green">#a4bea0</color>
+    <color name="terractoca_dark_green">#8bad9d</color>
+    <color name="terractoca_white_light">#dfd7bb</color>
+    <color name="terractoca_brick_light">#d89065</color>
+    <color name="terractoca_brick_dark">#c36c5d</color>
 </resources>
