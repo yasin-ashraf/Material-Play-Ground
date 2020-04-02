@@ -16,24 +16,24 @@
 
     <!--Shape-->
 
-    <style name="ShapeAppearance.Reply.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.MplayGround.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/reply_small_component_corner_radius</item>
     </style>
 
-    <style name="ShapeAppearance.Reply.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.MplayGround.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/reply_medium_component_corner_radius</item>
     </style>
 
-    <style name="ShapeAppearance.Reply.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.MplayGround.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/reply_large_component_corner_radius</item>
     </style>
 
     <!--ShapeAppearance overlay for components which can be 'marked' by rounding their top left -->
     <!--corner - ie. email cards which have been starred-->
-    <style name="ShapeAppearanceOverlay.Reply.MediumComponent.Marked" parent="">
+    <style name="ShapeAppearanceOverlay.MplayGround.MediumComponent.Marked" parent="">
         <item name="cornerSizeTopLeft">@dimen/reply_small_component_corner_radius</item>
     </style>
 

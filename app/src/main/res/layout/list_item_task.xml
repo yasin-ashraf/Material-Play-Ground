@@ -14,8 +14,7 @@
       android:padding="0dp"
       android:clipToPadding="false"
       app:cardPreventCornerOverlap="false"
-      app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Reply.MediumComponent.Marked"
-      >
+      app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MplayGround.MediumComponent.Marked">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
