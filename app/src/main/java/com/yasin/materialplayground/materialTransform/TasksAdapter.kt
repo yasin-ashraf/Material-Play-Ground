@@ -1,6 +1,5 @@
 package com.yasin.materialplayground.materialTransform
 
-import android.transition.TransitionManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,19 +7,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.transition.MaterialSharedAxis
 import com.yasin.materialplayground.R
 import com.yasin.materialplayground.materialTransform.ElasticItemTouchHelper.ReboundableViewHolder
 import com.yasin.materialplayground.normalize
-import com.yasin.materialplayground.viewUtils.FastOutUltraSlowIn
 import kotlinx.android.synthetic.main.list_item_task.view.card
-import kotlinx.android.synthetic.main.list_item_task.view.subTitle
-import kotlinx.android.synthetic.main.list_item_task.view.subTitle_expanded
 
 /**
  * Created by Yasin on 30/3/20.
  */
-class TasksAdapter : ListAdapter<Task, TaskItemViewHolder>(TasksItemDiffCallback()) {
+class TasksAdapter(private val taskViewClick: TaskViewClick) : ListAdapter<Task, TaskItemViewHolder>(TasksItemDiffCallback()) {
 
   override fun onCreateViewHolder(
     parent: ViewGroup,
@@ -35,9 +30,12 @@ class TasksAdapter : ListAdapter<Task, TaskItemViewHolder>(TasksItemDiffCallback
     holder: TaskItemViewHolder,
     position: Int
   ) {
+    holder.itemView.transitionName = "task_details$position"
     holder.itemView.card.progress = if (holder.itemView.isActivated) 1f else 0f
     holder.itemView.setOnClickListener {
-      val fadeThrough = MaterialSharedAxis.create(
+      taskViewClick.onClick(it,"task_details$position")
+      //material axis animation
+      /*val fadeThrough = MaterialSharedAxis.create(
           holder.itemView.context,
           MaterialSharedAxis.Y, holder.itemView.subTitle.visibility == 8
       ).apply {
@@ -51,7 +49,7 @@ class TasksAdapter : ListAdapter<Task, TaskItemViewHolder>(TasksItemDiffCallback
       } else {
         holder.itemView.subTitle_expanded.visibility = View.GONE
         holder.itemView.subTitle.visibility = View.VISIBLE
-      }
+      }*/
     }
   }
 
@@ -94,6 +92,12 @@ class TaskItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
   }
 }
+
+interface TaskViewClick {
+  fun onClick(view: View, courseId: TaskId)
+}
+
+typealias TaskId = String
 
 data class Task(
   val id: String,

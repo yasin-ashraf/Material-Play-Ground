@@ -14,6 +14,12 @@
         app:destination="@id/createNewTaskFragment"
         app:enterAnim="@android:anim/fade_in"
         app:exitAnim="@anim/fade_out" />
+    <action
+        android:id="@+id/action_tasksFragment_to_taskDetailsScreen"
+        app:destination="@id/taskDetailsScreen"
+        app:exitAnim="@anim/fade_out"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/tasksFragment" />
   </fragment>
   <fragment
       android:id="@+id/createNewTaskFragment"
@@ -22,12 +28,15 @@
     <action
         android:id="@+id/action_createNewTaskFragment_to_taskCreatedFragment"
         app:destination="@id/taskCreatedFragment"
-        app:popUpTo="@id/tasksFragment"
-        app:exitAnim="@anim/fade_out"/>
+        app:exitAnim="@anim/fade_out" />
   </fragment>
   <fragment
       android:id="@+id/taskCreatedFragment"
       android:name="com.yasin.materialplayground.materialTransform.TaskCreatedFragment"
       android:label="TaskCreatedFragment"
       app:exitAnim="@anim/fade_out"/>
+  <fragment
+      android:id="@+id/taskDetailsScreen"
+      android:name="com.yasin.materialplayground.materialTransform.TaskDetailsScreen"
+      android:label="TaskDetailsScreen" />
 </navigation>
