@@ -25,6 +25,9 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
