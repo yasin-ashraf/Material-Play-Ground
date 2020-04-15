@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,6 +16,7 @@ import com.google.android.material.button.MaterialButton;
 import com.yasin.materialplayground.RoundedBottomSheetDialog.RoundedBottomSheetActivity;
 import com.yasin.materialplayground.bottomSheet.BottomSheetActivity;
 import com.yasin.materialplayground.materialTransform.TaskMotionTransformActivity;
+import com.yasin.materialplayground.mergeAdapter.PostsActivity;
 import com.yasin.materialplayground.motion.ElasticLayoutActivity;
 import com.yasin.materialplayground.shrinkingButton.ShrinkButtonActivity;
 import com.yasin.materialplayground.vectorDrawables.VectorActivity;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
-    private LinearLayout drawer;
+    private ScrollView drawer;
     private MaterialButton buttonToggle;
 
     @Override
@@ -77,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
         TextView bottomSheet = findViewById(R.id.tv_bottom_sheet);
         bottomSheet.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, BottomSheetActivity.class),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        });
+
+        TextView mergeAdapter = findViewById(R.id.tv_merge_adapter);
+        mergeAdapter.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, PostsActivity.class),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         });
     }

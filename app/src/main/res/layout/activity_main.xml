@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    tools:openDrawer="end"
     >
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -40,90 +41,108 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <LinearLayout
-        android:id="@+id/menu"
+    <ScrollView
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/menu"
+        android:layout_height="match_parent"
         android:layout_gravity="end"
         android:clipToPadding="false"
         android:elevation="8dp"
         android:scrollbarStyle="outsideOverlay"
         android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/tv_rounded_bottom_sheet"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/rounded_bottom_sheet"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           >
 
-        <TextView
-            android:id="@+id/tv_shrink_button"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/shrinking_button"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+            <TextView
+                android:id="@+id/tv_rounded_bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/rounded_bottom_sheet"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
-        <TextView
-            android:id="@+id/tv_vector"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/animated_vector_drawables"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+            <TextView
+                android:id="@+id/tv_shrink_button"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/shrinking_button"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
-        <TextView
-            android:id="@+id/tv_move"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/move_item_touch"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+            <TextView
+                android:id="@+id/tv_vector"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/animated_vector_drawables"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
-        <TextView
-            android:id="@+id/tv_transform"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/motion_transform"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+            <TextView
+                android:id="@+id/tv_move"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/move_item_touch"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
-        <TextView
-            android:id="@+id/tv_bottom_sheet"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/bottom_sheet"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:drawableStart="@drawable/ic_identifier"
-            android:drawablePadding="0dp"/>
+            <TextView
+                android:id="@+id/tv_transform"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/motion_transform"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
+            <TextView
+                android:id="@+id/tv_bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/bottom_sheet"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_merge_adapter"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/merge_adapter"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_identifier"
+                android:drawablePadding="0dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

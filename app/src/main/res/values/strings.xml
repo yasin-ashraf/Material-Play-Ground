@@ -43,4 +43,5 @@ Laoreet sit amet cursus sit amet dictum sit amet. Ipsum consequat nisl vel preti
   <string name="bottom_sheet">Bottom Sheet</string>
   <string name="action_forgot_password">Forgot Password</string>
   <string name="action_create_account">Create Account</string>
+  <string name="merge_adapter">Merge Adapter</string>
 </resources>

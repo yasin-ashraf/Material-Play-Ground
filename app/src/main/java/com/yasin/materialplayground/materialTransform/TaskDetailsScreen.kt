@@ -15,7 +15,6 @@ class TaskDetailsScreen : Fragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    postponeEnterTransition()
     sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
       scrimColor = resources.getColor(R.color.colorPrimary,null)
       fadeMode = MaterialContainerTransform.FADE_MODE_OUT
@@ -37,11 +36,4 @@ class TaskDetailsScreen : Fragment() {
     return inflater.inflate(R.layout.fragment_details,container,false)
   }
 
-  override fun onViewCreated(
-    view: View,
-    savedInstanceState: Bundle?
-  ) {
-    super.onViewCreated(view, savedInstanceState)
-    startPostponedEnterTransition()
-  }
 }
